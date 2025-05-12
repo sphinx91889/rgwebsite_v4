@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Allow all crawlers
-Sitemap: https://rivieregroup.com/sitemap.xml
+Sitemap: https://therivieregroup.org/sitemap.xml
