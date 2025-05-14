@@ -1,59 +1,28 @@
-import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export const SectionComponentNodeByAnima = (): JSX.Element => {
-  // Navigation links data
-  const quickNavLinks = [
-    "Home",
-    "Services",
-    "Portfolio",
-    "Resources",
-    "Contact",
-    "Book a consultation",
-  ];
+  const navigate = useNavigate();
 
-  // Services links data
-  const servicesLinks = [
-    "Web Development",
-    "Digital Strategy",
-    "Branding & Design",
-    "Media & Content",
-    "Nexus CRM",
-  ];
-
-  // Social media icons data
-  const socialIcons = [
-    { 
-      src: "/frame-25.svg", 
-      active: true,
-      href: "https://www.facebook.com/profile.php?id=61573781046929"
-    },
-    { 
-      src: "/frame.svg", 
-      active: false,
-      href: "https://www.instagram.com/rivieregroup/"
-    },
-    { 
-      src: "/frame-7.svg", 
-      active: false,
-      href: "https://x.com/rivieregroup"
-    },
+  const menuItems = [
+    { name: "About us", path: "/about-us" },
+    { name: "Services", path: "/services" },
+    { name: "Products", path: "/products" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "Blog", path: "/blog" },
   ];
 
   return (
-    <footer className="flex flex-col w-full items-start gap-12 py-16 px-4 lg:px-8">
-      <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-[169px] w-full justify-center">
-        {/* Company Info Column */}
-        <div className="flex flex-col w-full lg:w-[353px] items-center lg:items-start gap-8">
-          <div className="flex flex-col items-center lg:items-start gap-6 w-full">
-            <div className="relative flex items-center h-[60px]">
+    <div className="bg-[#f9f9f9] py-16 px-4 md:px-8">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Column 1 - Logo and Description */}
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center">
               <div className="w-[60px] h-[60px] bg-[#188bf6] rounded-full flex items-center justify-center">
                 <div className="relative w-6 h-7">
-                  <img
-                    className="absolute w-6 h-[27px] top-px left-0"
-                    alt="R"
-                    src="/r.svg"
-                  />
+                  <img className="absolute w-6 h-[27px]" alt="R" src="/r.svg" />
                   <div className="absolute w-0.5 h-[25px] top-0 left-1.5 bg-[#188bf6]" />
                 </div>
               </div>
@@ -63,120 +32,160 @@ export const SectionComponentNodeByAnima = (): JSX.Element => {
                 src="/riviere-group.svg"
               />
             </div>
-
-            <p className="font-['Poppins',Helvetica] font-normal text-[#2f2f2f] text-lg leading-[26px] text-center lg:text-left">
-              Riviere Group® is a full-service media agency specializing in web design, branding, SEO, AI, and music production—empowering brands and artists to thrive.
+            <p className="text-gray-600 font-['Poppins']">
+              Riviere Group is a full-service media production and marketing
+              agency specializing in cutting-edge digital solutions for brands
+              and creatives.
             </p>
-          </div>
-
-          {/* Social Media Icons */}
-          <div className="flex items-center justify-center lg:justify-start gap-3 w-full">
-            {socialIcons.map((icon, index) => (
+            <div className="flex gap-4">
               <a
-                href={icon.href}
+                href="https://www.facebook.com/rivieregroup"
                 target="_blank"
                 rel="noopener noreferrer"
-                key={index}
-                className={`w-10 h-10 rounded-full overflow-hidden flex items-center justify-center ${
-                  icon.active
-                    ? "bg-[#188bf6]"
-                    : "bg-neutral-50 border border-solid border-[#efefef] hover:border-[#188bf6] transition-colors"
-                }`}
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
               >
-                <img
-                  className="w-6 h-6"
-                  alt="Social media icon"
-                  src={icon.src}
-                />
+                <img src="/icons/facebook-logo.svg" alt="Facebook" className="w-6 h-6" />
               </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Navigation Links Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full lg:w-[758px]">
-          {/* Quick Navigation Column */}
-          <div className="flex flex-col items-center lg:items-start gap-5">
-            <h3 className="font-['Poppins',Helvetica] font-medium text-black text-lg leading-[26px] text-center lg:text-left">
-              Quick Navigation
-            </h3>
-
-            {quickNavLinks.map((link, index) => (
               <a
-                key={index}
-                href="#"
-                className="font-['Poppins',Helvetica] font-normal text-[#2f2f2f] text-lg leading-[26px] text-center lg:text-left"
+                href="https://www.instagram.com/rivieregroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
               >
-                {link}
+                <img src="/icons/instagram-logo.svg" alt="Instagram" className="w-6 h-6" />
               </a>
-            ))}
+              <a
+                href="https://www.linkedin.com/company/rivieregroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+              >
+                <img src="/icons/linkedin-logo.svg" alt="LinkedIn" className="w-6 h-6" />
+              </a>
+            </div>
           </div>
 
-          {/* Services Column */}
-          <div className="flex flex-col items-center lg:items-start gap-5">
-            <h3 className="font-['Poppins',Helvetica] font-medium text-black text-lg leading-[26px] text-center lg:text-left">
+          {/* Column 2 - Quick Links */}
+          <div>
+            <h3 className="text-xl font-bold mb-6 font-['Montserrat']">
+              Quick Links
+            </h3>
+            <ul className="flex flex-col gap-4">
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <a
+                    onClick={() => navigate(item.path)}
+                    className="text-gray-600 hover:text-[#188bf6] transition-colors cursor-pointer font-['Poppins']"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  onClick={() => navigate("/contact")}
+                  className="text-gray-600 hover:text-[#188bf6] transition-colors cursor-pointer font-['Poppins']"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3 - Services */}
+          <div>
+            <h3 className="text-xl font-bold mb-6 font-['Montserrat']">
               Services
             </h3>
-
-            {servicesLinks.map((service, index) => (
-              <a
-                key={index}
-                href="#"
-                className="font-['Poppins',Helvetica] font-normal text-[#2f2f2f] text-lg leading-[26px] text-center lg:text-left"
-              >
-                {service}
-              </a>
-            ))}
+            <ul className="flex flex-col gap-4">
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-gray-600 hover:text-[#188bf6] transition-colors cursor-pointer font-['Poppins']"
+                >
+                  Web Design & Development
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-gray-600 hover:text-[#188bf6] transition-colors cursor-pointer font-['Poppins']"
+                >
+                  Digital Marketing
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-gray-600 hover:text-[#188bf6] transition-colors cursor-pointer font-['Poppins']"
+                >
+                  Graphic Design
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-gray-600 hover:text-[#188bf6] transition-colors cursor-pointer font-['Poppins']"
+                >
+                  Music Production
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => navigate("/services")}
+                  className="text-gray-600 hover:text-[#188bf6] transition-colors cursor-pointer font-['Poppins']"
+                >
+                  Audio Engineering
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {/* Company Information Column */}
-          <div className="flex flex-col items-center lg:items-start gap-5">
-            <h3 className="font-['Poppins',Helvetica] font-medium text-black text-lg leading-[26px] text-center lg:text-left">
-              Company Information
+          {/* Column 4 - Contact */}
+          <div>
+            <h3 className="text-xl font-bold mb-6 font-['Montserrat']">
+              Contact
             </h3>
-
-            <div className="flex items-center justify-center lg:justify-start gap-2 w-full">
-              <MailIcon className="w-6 h-6" />
-              <a
-                href="mailto:info@rivieregroup.org"
-                className="font-['Poppins',Helvetica] font-normal text-[#2f2f2f] text-sm lg:text-base leading-[26px] break-all hover:text-[#188bf6] transition-colors"
-              >
-                info@rivieregroup.org
-              </a>
-            </div>
-
-            <div className="flex items-center justify-center lg:justify-start gap-2 w-full">
-              <PhoneIcon className="w-6 h-6" />
-              <a
-                href="tel:1-866-814-2287"
-                className="font-['Poppins',Helvetica] font-normal text-[#2f2f2f] text-sm lg:text-base leading-[26px] hover:text-[#188bf6] transition-colors"
-              >
-                1-866-814-2287
-              </a>
-            </div>
-
+            <ul className="flex flex-col gap-4">
+              <li className="flex items-start gap-2">
+                <span className="text-[#188bf6] font-bold">Email:</span>
+                <a
+                  href="mailto:info@therivieregroup.org"
+                  className="text-gray-600 hover:text-[#188bf6] transition-colors font-['Poppins']"
+                >
+                  info@therivieregroup.org
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#188bf6] font-bold">Phone:</span>
+                <a
+                  href="tel:1-866-814-2287"
+                  className="text-gray-600 hover:text-[#188bf6] transition-colors font-['Poppins']"
+                >
+                  1-866-814-2287
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Footer Bottom Section */}
-      <div className="flex flex-col items-start gap-5 w-full">
-        <img
-          className="w-full h-px object-cover"
-          alt="Divider line"
-          src="/line-1.svg"
-        />
-
-        <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-0 justify-between w-full">
-          <p className="font-['Poppins',Helvetica] font-normal text-[#2f2f2f] text-base lg:text-lg leading-[26px] text-center lg:text-left">
+        {/* Copyright and US Veteran Owned Business */}
+        <div className="border-t border-gray-200 pt-8 flex flex-col items-center">
+          <p className="text-gray-600 text-center font-['Poppins'] mb-4">
             Copyright © 2025 Riviere Group. All rights reserved.
           </p>
-
-          <p className="font-['Poppins',Helvetica] font-normal text-[#2f2f2f] text-base lg:text-lg leading-[26px] text-center lg:text-left">
-            Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;Terms &amp; Conditions
-          </p>
+          <div className="flex items-center gap-2">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png" 
+              alt="US Flag" 
+              className="w-6 h-4"
+            />
+            <p className="text-gray-600 font-['Poppins'] font-semibold">
+              US Veteran Owned Business
+            </p>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 };
