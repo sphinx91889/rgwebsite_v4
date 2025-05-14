@@ -414,6 +414,24 @@ export const Portfolio = (): JSX.Element => {
               </Card>
             ))}
           </div>
+
+          {/* Design Portfolio Video Section - Added under Khaled card */}
+          <div className="mt-16 flex flex-col items-center">
+            <h2 className="text-3xl font-bold mb-8 text-center font-['Montserrat']">
+              Our Design Portfolio:
+            </h2>
+            <div className="w-full max-w-4xl overflow-hidden rounded-xl shadow-xl">
+              <video
+                src="https://storage.googleapis.com/msgsndr/8ngdMjJjmckUW3DffAfv/media/681d30e32c1b7e2dc2e5cd59.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
