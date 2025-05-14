@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Button } from "../../../../components/ui/button";
 
 export const SectionComponentNodeByAnima = (): JSX.Element => {
   const navigate = useNavigate();
@@ -166,6 +167,23 @@ export const SectionComponentNodeByAnima = (): JSX.Element => {
                 </a>
               </li>
             </ul>
+            
+            {/* Login Buttons */}
+            <div className="flex flex-col gap-3 mt-6">
+              <Button 
+                variant="outline" 
+                className="w-full border-[#188bf6] text-[#188bf6] hover:bg-[#188bf6] hover:text-white transition-colors"
+                onClick={() => window.open("https://app.rivieregroup.org", "_blank")}
+              >
+                Nexus Login
+              </Button>
+              <Button 
+                variant="outline" 
+                className="w-full border-[#188bf6] text-[#188bf6] hover:bg-[#188bf6] hover:text-white transition-colors"
+              >
+                Employee Portal
+              </Button>
+            </div>
           </div>
         </div>
 
