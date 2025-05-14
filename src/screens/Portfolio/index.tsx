@@ -38,6 +38,26 @@ export const Portfolio = (): JSX.Element => {
       link: "https://blacknotemgmt.com/",
     },
     {
+      title: "EliteUSMD",
+      subtitle: "Premium Healthcare Marketing Solutions",
+      category: "Web Design & Digital Marketing",
+      description:
+        "Comprehensive digital presence for healthcare professionals with strict compliance protocols and premium branding.",
+      videoUrl:
+        "https://storage.googleapis.com/msgsndr/8ngdMjJjmckUW3DffAfv/media/6824b934684111470ef181ab.mp4",
+      tags: ["Web Design", "Healthcare", "Compliance", "Digital Marketing"],
+      type: "video",
+      features: [
+        "Custom Coded Website",
+        "Adherence to Strict Compliance Protocols",
+        "Logo + Brand Identity",
+        "UXI Design",
+        "Social Media Management",
+        "SEO"
+      ],
+      link: "https://eliteusmd.com/",
+    },
+    {
       title: "BanVibeCoders",
       subtitle: "They Wrote Us Off. So We Coded Our Own World.",
       category: "Web Design",
